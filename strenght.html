@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GymBro - Strength Calculators</title>
+        <link rel="icon" type="image/x-icon" href="style/icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style/resetcss.css">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://kit.fontawesome.com/c3ecf3f0de.js" crossorigin="anonymous"></script>
+        <script src="java/header.js"></script>
+        <script src="java/strength.js"></script>
+    </head>
+
+    <body>
+      <!-- Header Section -->
+      <header id="header">    
+          <h1>GYMBRO</h1>
+          <nav>
+              <a href="index.html"><i class="fa-solid fa-home"></i> Home</a>
+              <a href="#"><i class="fa-solid fa-dumbbell"></i> Strenght</a>
+              <a href="body.html"><i class="fa-solid fa-person"></i> Body</a>
+              <a href="diet.html"><i class="fa-solid fa-utensils"></i> Diet</a>
+              <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download</a>
+          </nav>
+      </header>
+
+        <main>
+            <section id="selection" class="selection-container">
+                <h1>Select a Calculator</h1>
+                <p>Choose the calculator you want to use</p>
+
+                <div class="option-container">
+                    <a href="#oneRM" class="option">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>1RM Calculator</span>
+                    </a>
+                    <a href="#progression" class="option">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Progression Calculator</span>
+                    </a>
+                    <a href="#muscleRecovery" class="option">
+                        <i class="fa-solid fa-notes-medical"></i>
+                        <span>Volume & Recovery Calculator</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="calculators" class="calculator-section">
+                <div id="oneRM">
+                    <div class="calculator-card">
+                        <h2>One Rep Max Calculator</h2>
+                        <p>Calculate your estimated one rep maximum based on your current lifting weight.</p>
+                        <form id="oneRMForm">
+                            <div class="input-group">
+                                <label for="oneRM-weight">Weight Lifted (kg)</label>
+                                <input type="number" id="oneRM-weight" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="reps">Number of Reps</label>
+                                <input type="number" id="reps" required min="1">
+                            </div>
+                            <button type="submit" class="calc-button">Calculate 1RM</button>
+                        </form>
+                        <div class="result" id="oneRMResult">
+                            <h3>Your Estimated 1RM</h3>
+                            <p id="oneRMValue">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progression">
+                    <div class="calculator-card">
+                        <h2>Lift Progress Predictor</h2>
+                        <p>Predict how long it will take to reach your goal lift based on your current progress.</p>
+                        <form id="progressionForm">
+                            <div class="input-group">
+                                <label for="current-lift">Current Lift (kg)</label>
+                                <input type="number" id="current-lift" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="target-lift">Target Lift (kg)</label>
+                                <input type="number" id="target-lift" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="training-frequency">How often do you train this lift? (times per week)</label>
+                                <input type="number" id="training-frequency" required min="1" max="7">
+                            </div>
+                            <div class="input-group">
+                                <label for="experience-level">Experience Level</label>
+                                <select id="experience-level" required>
+                                    <option value="beginner">Beginner (0-6 months of consistent training)</option>
+                                    <option value="intermediate">Intermediate (6-24 months of consistent training)</option>
+                                    <option value="advanced">Advanced (2+ years of consistent training)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="calc-button">Predict Progress</button>
+                        </form>
+                        <div class="result" id="progressionResult">
+                            <h3>Progress Prediction</h3>
+                            <p id="progressionValue">-</p>
+                            <p id="timeToGoal">-</p>
+                            <p id="weeklyRate">-</p>
+                            <p id="monthlyRate">-</p>
+                            <p id="liftDifference">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="muscleRecovery">
+                    <div class="calculator-card">
+                        <h2>Volume & Recovery Calculator</h2>
+                        <p>Calculate your training volume and estimate recovery time based on your workout intensity and volume.</p>
+                        <form id="recoveryForm">
+                            <div class="input-group">
+                                <label for="volume-weight">Weight Used (kg)</label>
+                                <input type="number" id="volume-weight" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="sets">Number of Sets</label>
+                                <input type="number" id="sets" required min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="volume-reps">Reps per Set</label>
+                                <input type="number" id="volume-reps" required min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="volume-frequency">Training Frequency (times per week)</label>
+                                <input type="number" id="volume-frequency" required min="1" max="7">
+                            </div>
+                            <div class="input-group">
+                                <label for="intensity">Workout Intensity (0-100%)</label>
+                                <input type="number" id="intensity" required min="0" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="muscle-group">Muscle Group</label>
+                                <select id="muscle-group" required>
+                                    <option value="chest">Chest</option>
+                                    <option value="back">Back</option>
+                                    <option value="legs">Legs</option>
+                                    <option value="shoulders">Shoulders</option>
+                                    <option value="arms">Arms</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="calc-button">Calculate Volume & Recovery</button>
+                        </form>
+                        <div class="result" id="recoveryResult">
+                            <h3>Training Volume</h3>
+                            <p id="weeklyVolume">-</p>
+                            <p id="monthlyVolume">-</p>
+                            <h3>Recovery Estimation</h3>
+                            <p id="recoveryTime">-</p>
+                            <p id="recoveryNotes">-</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <section id="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Mail: <a href="mailto:info@website.com">info@website.com</a>
+                    </p>
+                    <p>Phone: +123-456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="https://www.facebook.com">Facebook</a> |
+                        <a href="https://x.com">Twitter</a> |
+                        <a href="https://www.instagram.com">Instagram</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2025 Gymbro. All rights reserved.</p>
+                </div>
+            </section>
+        </footer>
+    </body>
+</html> 
