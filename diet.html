@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GymBro - Diet Calculators</title>
+        <link rel="icon" type="image/x-icon" href="style/icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style/resetcss.css">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://kit.fontawesome.com/c3ecf3f0de.js" crossorigin="anonymous"></script>
+        <script src="java/header.js"></script>
+        <script src="java/diet.js"></script>
+    </head>
+
+    <body>
+      <!-- Header Section -->
+      <header id="header">    
+          <h1>GYMBRO</h1>
+          <nav>
+              <a href="index.html"><i class="fa-solid fa-home"></i> Home</a>
+              <a href="strenght.html"><i class="fa-solid fa-dumbbell"></i> Strenght</a>
+              <a href="body.html"><i class="fa-solid fa-person"></i> Body</a>
+              <a href="#"><i class="fa-solid fa-utensils"></i> Diet</a>
+              <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download</a>
+          </nav>
+      </header>
+
+        <main>
+            <section id="selection" class="selection-container">
+                <h1>Select a Calculator</h1>
+                <p>Choose the calculator you want to use</p>
+
+                <div class="option-container">
+                    <a href="#calories" class="option">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>Calorie Calculator</span>
+                    </a>
+                    <a href="#macros" class="option">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        <span>Macros Calculator</span>
+                    </a>
+                    <a href="#water" class="option">
+                        <i class="fa-solid fa-glass-water"></i>
+                        <span>Water Intake Calculator</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="calculators" class="calculator-section">
+                <div id="calories">
+                    <div class="calculator-card">
+                        <h2>Calorie Calculator</h2>
+                        <p>Calculate your daily calorie needs based on your goals and activity level.</p>
+                        <form id="calorieForm">
+                            <div class="input-group">
+                                <label for="age">Age *</label>
+                                <input type="number" id="age" required min="1" max="120">
+                            </div>
+                            <div class="input-group">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="calorie-weight">Weight (kg) *</label>
+                                <input type="number" id="calorie-weight" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="height">Height (cm) *</label>
+                                <input type="number" id="height" required min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="activity">Activity Level *</label>
+                                <select id="activity" required>
+                                    <option value="1.2">Sedentary (little or no exercise)</option>
+                                    <option value="1.375">Lightly active (1-3 days/week)</option>
+                                    <option value="1.55">Moderately active (3-5 days/week)</option>
+                                    <option value="1.725">Very active (6-7 days/week)</option>
+                                    <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="goal">Target Body Weight (kg)</label>
+                                <input type="number" id="target-body-weight">
+                            </div>
+                            <div class="input-group">
+                                <label for="goal">How long would you like to work towards your goal? (weeks)</label>
+                                <input type="number" id="time-to-goal">
+                            </div>
+                            <button type="submit" class="calc-button">Calculate Calories</button>
+                        </form>
+                        <div class="result" id="calorieResult">
+                            <h3>Your Daily Calorie Needs</h3>
+                            <p id="calorieValue">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="macros">
+                    <div class="calculator-card">
+                        <h2>Macro Calculator</h2>
+                        <p>Calculate your recommended daily macronutrient intake based on your goals.</p>
+                        <form id="macroForm">
+                            <div class="input-group">
+                                <label for="macro-weight">Weight (kg) *</label>
+                                <input type="number" id="macro-weight" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="goal-type">Training Goal *</label>
+                                <select id="goal-type" required>
+                                    <option value="fat-loss">Fat Loss</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="muscle-gain">Muscle Gain</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="activity-level">Activity Level *</label>
+                                <select id="activity-level" required>
+                                    <option value="1.2">Sedentary (little or no exercise)</option>
+                                    <option value="1.375">Lightly active (1-3 days/week)</option>
+                                    <option value="1.55">Moderately active (3-5 days/week)</option>
+                                    <option value="1.725">Very active (6-7 days/week)</option>
+                                    <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="calc-button">Calculate Macros</button>
+                        </form>
+                        <div class="result" id="macroResult">
+                            <h3>Your Daily Macros</h3>
+                            <div class="macro-results">
+                                <div class="macro-item">
+                                    <span class="macro-label">Protein</span>
+                                    <p id="proteinValue">-</p>
+                                </div>
+                                <div class="macro-item">
+                                    <span class="macro-label">Carbs</span>
+                                    <p id="carbsValue">-</p>
+                                </div>
+                                <div class="macro-item">
+                                    <span class="macro-label">Fats</span>
+                                    <p id="fatsValue">-</p>
+                                </div>
+                            </div>
+                            <p id="totalCalories" class="total-calories">Total Calories: -</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="water">
+                  <div class="calculator-card">
+                      <h2>Water Intake Calculator</h2>
+                      <p>Calculate your recommended daily water intake based on your weight and activity level.</p>
+                      <form id="waterForm">
+                          <div class="input-group">
+                              <label for="water-weight">Weight (kg)</label>
+                              <input type="number" id="water-weight" required min="0" step="0.1">
+                          </div>
+                          <div class="input-group">
+                              <label for="water-activity">Activity Level</label>
+                              <select id="water-activity" required>
+                                  <option value="1.2">Sedentary (little or no exercise)</option>
+                                  <option value="1.375">Lightly Active (1-3 days/week)</option>
+                                  <option value="1.55">Moderately Active (3-5 days/week)</option>
+                                  <option value="1.725">Very Active (6-7 days/week)</option>
+                                  <option value="1.9">Extremely Active (twice per day, extra heavy workouts)</option>
+                              </select>
+                          </div>
+                          <button type="submit" class="calc-button">Calculate Water Intake</button>
+                      </form>
+                      <div class="result" id="waterResult">
+                          <h3>Recommended Daily Water Intake</h3>
+                          <p id="waterAmount">-</p>
+                          <p id="waterGlasses">-</p>
+                      </div>
+                  </div>
+              </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <section id="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Mail: <a href="mailto:info@website.com">info@website.com</a>
+                    </p>
+                    <p>Phone: +123-456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="https://www.facebook.com">Facebook</a> |
+                        <a href="https://x.com">Twitter</a> |
+                        <a href="https://www.instagram.com">Instagram</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2025 Gymbro. All rights reserved.</p>
+                </div>
+            </section>
+        </footer>
+    </body>
+</html> 
