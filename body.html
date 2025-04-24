@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GymBro - Body Calculators</title>
+        <link rel="icon" type="image/x-icon" href="style/icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style/resetcss.css">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://kit.fontawesome.com/c3ecf3f0de.js" crossorigin="anonymous"></script>
+        <script src="java/header.js"></script>
+        <script src="java/body.js"></script>
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header id="header">    
+            <h1>GYMBRO</h1>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-home"></i> Home</a>
+                <a href="strenght.html"><i class="fa-solid fa-dumbbell"></i> Strenght</a>
+                <a href="#"><i class="fa-solid fa-person"></i> Body</a>
+                <a href="diet.html"><i class="fa-solid fa-utensils"></i> Diet</a>
+                <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="selection" class="selection-container">
+                <h1>Select a Calculator</h1>
+                <p>Choose the calculator you want to use</p>
+
+                <div class="option-container">
+                    <a href="#bodyFat" class="option">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Body Fat % Calculator</span>
+                    </a>
+                    <a href="#sleep" class="option">
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Sleep Impact Estimator</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="calculators" class="calculator-section">
+                <div id="bodyFat">
+                    <div class="calculator-card">
+                        <h2>Body Fat Calculator</h2>
+                        <p>Calculate your body fat percentage using the U.S. Navy Body Fat Calculator method.</p>
+                        <form id="bodyFatForm">
+                            <div class="input-group">
+                                <label for="bodyFat-gender">Gender</label>
+                                <select id="bodyFat-gender" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="bodyFat-height">Height (cm)</label>
+                                <input type="number" id="bodyFat-height" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="bodyFat-neck">Neck Circumference (cm)</label>
+                                <input type="number" id="bodyFat-neck" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="bodyFat-waist">Waist Circumference (cm)</label>
+                                <input type="number" id="bodyFat-waist" required min="0" step="0.1">
+                            </div>
+                            <div class="input-group" id="hip-input-group">
+                                <label for="bodyFat-hip">Hip Circumference (cm)</label>
+                                <input type="number" id="bodyFat-hip" required min="0" step="0.1">
+                            </div>
+                            <button type="submit" class="calc-button">Calculate Body Fat</button>
+                        </form>
+                        <div class="result" id="bodyFatResult">
+                            <h3>Your Body Fat Percentage</h3>
+                            <p id="bodyFatValue">-</p>
+                            <p id="bodyFatCategory">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sleep">
+                    <div class="calculator-card">
+                        <h2>Sleep Impact Estimator</h2>
+                        <p>Estimate how your sleep affects your recovery and muscle growth.</p>
+                        <form id="sleepForm">
+                            <div class="input-group">
+                                <label for="sleep-hours">Hours of Sleep</label>
+                                <input type="number" id="sleep-hours" required min="0" max="24" step="0.5">
+                            </div>
+                            <div class="input-group">
+                                <label for="sleep-quality">Sleep Quality</label>
+                                <select id="sleep-quality" required>
+                                    <option value="poor">Poor</option>
+                                    <option value="average">Average</option>
+                                    <option value="good">Good</option>
+                                    <option value="excellent">Excellent</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="calc-button">Estimate Impact</button>
+                        </form>
+                        <div class="result" id="sleepResult">
+                            <h3>Sleep Impact Analysis</h3>
+                            <p id="sleepImpact">-</p>
+                            <p id="sleepRecommendation">-</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <section id="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Mail: <a href="mailto:info@website.com">info@website.com</a>
+                    </p>
+                    <p>Phone: +123-456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>
+                        <a href="https://www.facebook.com">Facebook</a> |
+                        <a href="https://x.com">Twitter</a> |
+                        <a href="https://www.instagram.com">Instagram</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <p>&copy; 2025 Gymbro. All rights reserved.</p>
+                </div>
+            </section>
+        </footer>
+    </body>
+</html> 
