@@ -130,7 +130,7 @@ function calculateProgression(currentLift, targetLift, trainingFrequency, experi
     // Adjust rate based on training frequency
     const frequencyMultiplier = 1 + ((trainingFrequency - 1) * 0.1);
     const monthlyRate = baseRates[experienceLevel] * frequencyMultiplier;
-    const monthsToGoal = Math.ceil(liftDifference / monthlyRaerte);
+    const monthsToGoal = Math.ceil(liftDifference / monthlyRate);
     const weeklyRate = monthlyRate / 4;
     
     return {
