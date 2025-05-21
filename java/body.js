@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const genderSelect = document.getElementById('bodyFat-gender');
         const hipInputGroup = document.getElementById('hip-input-group');
         
+        // when we change gender
         genderSelect.addEventListener('change', function() {
             hipInputGroup.style.display = this.value === 'female' ? 'block' : 'none';
             if (this.value === 'male') {
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        // when we submit by pressing the button
         bodyFatForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const gender = document.getElementById('bodyFat-gender').value;
@@ -74,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sleep Impact Calculator
     const sleepForm = document.getElementById('sleepForm');
     if (sleepForm) {
+
+        // when we submit by pressing the button
         sleepForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const hours = parseFloat(document.getElementById('sleep-hours').value);
