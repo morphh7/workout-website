@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Handle calculator selection
     document.querySelectorAll('.option').forEach(option => {
+
+        // when we choose a calculator
         option.addEventListener('click', (e) => {
             e.preventDefault();
             const target = e.currentTarget.getAttribute('href').substring(1);
@@ -42,6 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Calorie Calculator
     const calorieForm = document.getElementById('calorieForm');
     if (calorieForm) {
+        
+        // when we submit by pressing the button
         calorieForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const age = parseInt(document.getElementById('age').value);
