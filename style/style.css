@@ -1,3 +1,6 @@
+/* add media queries */
+/* fix responsiveness */
+
 /* ESSENTIAL STUFF */
 :root {
     --primary-color: #9cb0e3;
@@ -503,6 +506,7 @@ footer {
 }
 
 /* --------------- SELECTION CONTAINER --------------- */
+
 .selection-container {
     display: flex;
     flex-direction: column;
@@ -573,4 +577,115 @@ footer {
 .option span {
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------- MEDIA QUERIES --------------- */
+
+/* Large devices */
+@media (max-width: 1200px) {
+    header {
+        max-width: 95%;
+    }
+}
+
+/* Medium devices */
+@media (max-width: 992px) {
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    header nav {
+        justify-content: center;
+    }
+}
+
+/* Small devices */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 5%;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .features {
+        grid-template-columns: 1fr;
+    }
+    .macro-results {
+        grid-template-columns: 1fr;
+    }
+    
+    header nav {
+        flex-wrap: wrap;
+    }
+    
+    #footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+    .option-container {
+        grid-template-columns: 1fr;
+    }
+    .calculator-section {
+        padding: 1rem;
+    }
+    .app-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 375px) {
+    .hero-section {
+        padding: 0 2%;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    header nav a.download-btn {
+        padding: 0.5rem 1rem;
+    }
 }
