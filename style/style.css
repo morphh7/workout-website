@@ -9,10 +9,16 @@
     --text-color: #333;
 }
 
-html {
+* {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
-    box-sizing: border-box;
 }
 
 body {
@@ -433,6 +439,8 @@ footer {
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .calculator-card h2 {
@@ -515,6 +523,10 @@ footer {
     min-height: 100vh;
     background: #111;
     margin-top: -60px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px; 
+    overflow: hidden;
 }
 
 .selection-container h1 {
@@ -539,6 +551,7 @@ footer {
     width: 100%;
     max-width: 1200px;
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 .option {
