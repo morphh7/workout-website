@@ -1,7 +1,7 @@
 // Strength Calculators
 document.addEventListener("DOMContentLoaded", () => {
-    const calculatorsSection = document.getElementById('calculators');
-    const calculatorSection = document.querySelector('.calculator-section');
+    const calculatorsSection = document.getElementById('calculators'); // calculator seciton
+    const calculatorSection = document.querySelector('.calculator-section'); // sectorn, white part for calculators
     
     const calculators = {
         oneRM: document.getElementById('oneRM'),
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         muscleRecovery: document.getElementById('muscleRecovery')
     };
 
-    // hide all calculators initially
+    // hide all calculators initially, when the site loads, we will receive the calcualtors but we will force remove it so it looks better
     if (calculatorsSection) {
         calculators.oneRM.style.display = 'none';
         calculators.progression.style.display = 'none';
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         calculatorSection.style.display = 'none';
     }
 
+    // for each of our calcualtor options
     document.querySelectorAll('.option').forEach(option => {
         option.addEventListener('click', (e) => {
             e.preventDefault();
